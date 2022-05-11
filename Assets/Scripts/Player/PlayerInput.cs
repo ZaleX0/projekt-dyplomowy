@@ -7,7 +7,7 @@ using UnityEngine.Events;
 public class PlayerInput : MonoBehaviour
 {
     [SerializeField]
-    private Camera camera;
+    private Camera mainCamera;
 
     public UnityEvent OnShoot = new UnityEvent();
     public UnityEvent<Vector2> OnMoveBody = new UnityEvent<Vector2>();
@@ -15,8 +15,8 @@ public class PlayerInput : MonoBehaviour
 
     private void Awake()
     {
-        if (camera == null)
-            camera = Camera.main;
+        if (mainCamera == null)
+            mainCamera = Camera.main;
     }
 
     private void Update()
@@ -42,14 +42,14 @@ public class PlayerInput : MonoBehaviour
     private Vector2 GetMousePosition()
     {
         Vector3 mousePosition = Input.mousePosition;
-        mousePosition.z = camera.nearClipPlane;
-        Vector2 mouseWorldPosition = camera.ScreenToWorldPoint(mousePosition);
+        mousePosition.z = mainCamera.nearClipPlane;
+        Vector2 mouseWorldPosition = mainCamera.ScreenToWorldPoint(mousePosition);
         return mouseWorldPosition;
     }
 
     private void GetBodyMovement()
     {
-        Vector2 movement = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-        OnMoveBody?.Invoke(movement.normalized);
+        Vector2 movementVector = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        OnMoveBody?.Invoke(movementVector.normalized);
     }
 }
