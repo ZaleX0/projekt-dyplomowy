@@ -4,41 +4,38 @@ using UnityEngine;
 
 public class TankController : MonoBehaviour
 {
-    private Rigidbody2D rigidbody;
-    private Vector2 movementVector;
-    [SerializeField] float maxSpeed = 10;
-    [SerializeField] float rotationSpeed = 100;
-    [SerializeField] float turretRotationSpeed = 100;
-
-    public Transform turretHolder;
+    public TankMover tankMover;
+    public AimTurret aimTurret;
+    public Turret[] turrets;
 
     private void Awake()
     {
-        rigidbody = GetComponent<Rigidbody2D>();
+        if (tankMover == null)
+            tankMover = GetComponentInChildren<TankMover>();
+
+        if (aimTurret == null)
+            aimTurret = GetComponentInChildren<AimTurret>();
+
+        if (turrets == null || turrets.Length == 0)
+            turrets = GetComponentsInChildren<Turret>();
     }
+
 
     public void HandleShoot()
     {
-        Debug.Log("Shooting");
+        foreach (var turret in turrets)
+        {
+            turret.Shoot();
+        }
     }
 
     public void HandleMoveBody(Vector2 movementVector)
     {
-        this.movementVector = movementVector;
+        tankMover.Move(movementVector);
     }
 
     public void HandleTurretMovement(Vector2 pointerPosition)
     {
-        var turretDirection = (Vector3)pointerPosition - transform.position;
-        var desiredAngle = Mathf.Atan2(turretDirection.y, turretDirection.x) * Mathf.Rad2Deg;
-        var rotationStep = turretRotationSpeed * Time.deltaTime;
-
-        turretHolder.rotation = Quaternion.RotateTowards(turretHolder.rotation, Quaternion.Euler(0, 0, desiredAngle - 90), rotationStep);
-    }
-
-    private void FixedUpdate()
-    {
-        rigidbody.velocity = maxSpeed * movementVector.y * Time.fixedDeltaTime * (Vector2)transform.up;
-        rigidbody.MoveRotation(transform.rotation * Quaternion.Euler(0, 0, -movementVector.x * rotationSpeed * Time.fixedDeltaTime));
+        aimTurret.Aim(pointerPosition);
     }
 }
