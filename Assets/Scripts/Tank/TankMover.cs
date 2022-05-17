@@ -7,6 +7,7 @@ public class TankMover : MonoBehaviour
 {
     private Vector2 movementVector;
     private Rigidbody2D rigidbody;
+    private Animator animator;
 
     public TankMovementData movementData;
 
@@ -16,6 +17,7 @@ public class TankMover : MonoBehaviour
     private void Awake()
     {
         rigidbody = GetComponentInParent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     public void Move(Vector2 movementVector)
@@ -41,6 +43,13 @@ public class TankMover : MonoBehaviour
     private void FixedUpdate()
     {
         rigidbody.velocity = currentSpeed * currentForewardDirection * Time.fixedDeltaTime * (Vector2)transform.up;
-        rigidbody.MoveRotation(transform.rotation * Quaternion.Euler(0, 0, -movementVector.x *movementData.rotationSpeed * Time.fixedDeltaTime));
+        rigidbody.MoveRotation(transform.rotation * Quaternion.Euler(0, 0, -movementVector.x * movementData.rotationSpeed * Time.fixedDeltaTime));
+
+        Animate();
+    }
+
+    void Animate()
+    {
+        animator.SetFloat("Speed", currentSpeed);
     }
 }

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63e3e79f0fd193743908aabb355f1bb4, type: 3}
   m_Name: DefaultBulletData
   m_EditorClassIdentifier: 
+  sprite: {fileID: 7365574002475698461, guid: 34f0e316344db7f4aa95951fd450f89a, type: 3}
   speed: 100
   damage: 10
   maxDistance: 100

@@ -10,10 +10,12 @@ public class Bullet : MonoBehaviour
     private Vector2 startPosition;
     private float conquaredDistance = 0;
     private Rigidbody2D rigidbody;
+    private SpriteRenderer spriteRenderer;
 
     private void Awake()
     {
         rigidbody = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     public void Initialize(BulletData bulletData)
@@ -21,6 +23,12 @@ public class Bullet : MonoBehaviour
         this.bulletData = bulletData;
         startPosition = transform.position;
         rigidbody.velocity = -transform.right * bulletData.speed;
+    }
+
+    private void Start()
+    {
+        if (bulletData.sprite != null)
+            spriteRenderer.sprite = bulletData.sprite;
     }
 
     private void Update()
@@ -38,16 +46,21 @@ public class Bullet : MonoBehaviour
         gameObject.SetActive(false);
     }
 
+    private void HitEnemy(Collider2D collision)
+    {
+        if (collision.tag == "Enemy")
+        {
+            var damagable = collision.GetComponent<Damagable>();
+            if (damagable != null)
+            {
+                damagable.Hit(bulletData.damage);
+            }
+            DisableObject();
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(collision.name);
-
-        var damagable = collision.GetComponent<Damagable>();
-        if (damagable != null)
-        {
-            damagable.Hit(bulletData.damage);
-        }
-
-        DisableObject();
+        HitEnemy(collision);
     }
 }
