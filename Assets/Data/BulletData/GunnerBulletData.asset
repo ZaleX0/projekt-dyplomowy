@@ -10,10 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 63e3e79f0fd193743908aabb355f1bb4, type: 3}
-  m_Name: DefaultBulletData
+  m_Name: GunnerBulletData
   m_EditorClassIdentifier: 
-  sprite: {fileID: 7365574002475698461, guid: 34f0e316344db7f4aa95951fd450f89a, type: 3}
-  tagToHit: Enemy
-  speed: 100
-  damage: 50
+  sprite: {fileID: -4253028335022237997, guid: 3e140f3ca5764314993bcb248b0c97d9, type: 3}
+  speed: 30
+  damage: 5
   maxDistance: 100

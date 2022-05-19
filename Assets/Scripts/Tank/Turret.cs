@@ -62,7 +62,7 @@ public class Turret : MonoBehaviour
                 GameObject bullet = bulletPool.CreateObject();
                 bullet.transform.position = barrel.position;
                 bullet.transform.localRotation = barrel.rotation;
-                bullet.GetComponent<Bullet>().Initialize(turretData.bulletData);
+                bullet.GetComponent<Bullet>().Initialize(turretData.bulletData, tag);
                 foreach (var collider in tankColliders)
                 {
                     Physics2D.IgnoreCollision(bullet.GetComponent<Collider2D>(), collider);

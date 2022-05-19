@@ -293,7 +293,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2fc7888126d2d04f85e1f1ffa9e62ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementData: {fileID: 11400000, guid: dbf527ae989a6a84386e3842ba009d7a, type: 2}
+  movementData: {fileID: 11400000, guid: 74be69d9228ddcb4c8eb65ed83f189df, type: 2}
 --- !u!95 &8751459594053452637
 Animator:
   serializedVersion: 3
@@ -374,7 +374,7 @@ GameObject:
   - component: {fileID: 2244217789524302765}
   m_Layer: 0
   m_Name: Tank
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -485,6 +485,7 @@ MonoBehaviour:
   OnHeal:
     m_PersistentCalls:
       m_Calls: []
+  invincibilityDurationSeconds: 0.1
 --- !u!114 &2244217789524302765
 MonoBehaviour:
   m_ObjectHideFlags: 0

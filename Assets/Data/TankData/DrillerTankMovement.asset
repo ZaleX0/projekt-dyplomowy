@@ -9,11 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63e3e79f0fd193743908aabb355f1bb4, type: 3}
-  m_Name: DefaultBulletData
+  m_Script: {fileID: 11500000, guid: c50d55e335b228741b3bbeb3531b0729, type: 3}
+  m_Name: DrillerTankMovement
   m_EditorClassIdentifier: 
-  sprite: {fileID: 7365574002475698461, guid: 34f0e316344db7f4aa95951fd450f89a, type: 3}
-  tagToHit: Enemy
-  speed: 100
-  damage: 50
-  maxDistance: 100
+  maxSpeed: 800
+  rotationSpeed: 200
+  acceleration: 800
+  deacceleration: 800

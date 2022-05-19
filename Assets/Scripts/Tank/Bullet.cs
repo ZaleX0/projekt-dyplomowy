@@ -7,10 +7,12 @@ public class Bullet : MonoBehaviour
 {
     public BulletData bulletData;
 
+    private string shootersTag;
     private Vector2 startPosition;
     private float conquaredDistance = 0;
     private Rigidbody2D rigidbody;
     private SpriteRenderer spriteRenderer;
+
 
     private void Awake()
     {
@@ -18,9 +20,10 @@ public class Bullet : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    public void Initialize(BulletData bulletData)
+    public void Initialize(BulletData bulletData, string shootersTag)
     {
         this.bulletData = bulletData;
+        this.shootersTag = shootersTag;
         startPosition = transform.position;
         rigidbody.velocity = -transform.right * bulletData.speed;
     }
@@ -46,9 +49,9 @@ public class Bullet : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    private void HitEnemy(Collider2D collision)
+    private void HitTag(Collider2D collision, string tagToHit)
     {
-        if (collision.tag == "Enemy")
+        if (collision.tag == tagToHit)
         {
             var damagable = collision.GetComponent<Damagable>();
             if (damagable != null)
@@ -61,6 +64,10 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        HitEnemy(collision);
+        if (shootersTag == "Player")
+            HitTag(collision, "Enemy");
+
+        else if (shootersTag == "Enemy")
+            HitTag(collision, "Player");
     }
 }
