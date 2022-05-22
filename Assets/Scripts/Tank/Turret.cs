@@ -28,13 +28,7 @@ public class Turret : MonoBehaviour
 
     private void Start()
     {
-        bulletPool.Initialize(turretData.bulletPrefab, bulletPoolCount);
-
-        if (turretData.sprite != null)
-        {
-            spriteRenderer.sprite = turretData.sprite;
-            transform.localPosition = new Vector3(turretData.spriteOffset, 0, 0);
-        }
+        UpdateTurretData(this.turretData);
     }
 
     private void Update()
@@ -68,14 +62,18 @@ public class Turret : MonoBehaviour
                     Physics2D.IgnoreCollision(bullet.GetComponent<Collider2D>(), collider);
                 }
             }
-
-            Animate();
         }
     }
 
-    private void Animate()
+    public void UpdateTurretData(TurretData turretData)
     {
-        // TODO: Shooting Animtion
-        throw new NotImplementedException();
+        this.turretData = turretData;
+
+        bulletPool.Initialize(turretData.bulletPrefab, bulletPoolCount);
+
+        if (turretData.sprite != null) {
+            spriteRenderer.sprite = turretData.sprite;
+            transform.localPosition = new Vector3(turretData.spriteOffset, 0, 0);
+        }
     }
 }

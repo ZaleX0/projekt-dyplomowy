@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3455910227207990452}
   - component: {fileID: 2338866109912850654}
   - component: {fileID: 5103026140192881938}
+  - component: {fileID: 5776559346123434227}
   m_Layer: 0
   m_Name: Tank
   m_TagString: Enemy
@@ -130,6 +131,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 5776559346123434227}
+        m_TargetAssemblyTypeName: CollectibleDropChance, Assembly-CSharp
+        m_MethodName: DropCollectible
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnHealthChange:
     m_PersistentCalls:
       m_Calls: []
@@ -152,6 +165,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09a92d6599e33964e892820504211527, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5776559346123434227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 308025762414413116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 128f11154c39244419caeecbee69d300, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponDropRate: 10
+  healthDropRate: 20
+  healthCollectiblePrefab: {fileID: 7382727149558005084, guid: 9fd17c069e92b1e4e89f7f132ec18963, type: 3}
+  weaponCollectiblePrefabs:
+  - {fileID: 6700836154603204007, guid: 485ec197c6c531b49a67d743ebd6689f, type: 3}
+  - {fileID: 6700836154603204007, guid: 152c3d7fbdce51d47be0b869d05f10e9, type: 3}
+  - {fileID: 6700836154603204007, guid: e0d5dc84b64f2ac4a9b0fb6a93c4c786, type: 3}
+  - {fileID: 6700836154603204007, guid: 1c4de5a129a3f6f408be764337b3e322, type: 3}
 --- !u!1 &756883911912831769
 GameObject:
   m_ObjectHideFlags: 0

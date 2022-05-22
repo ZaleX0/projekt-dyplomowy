@@ -19,6 +19,25 @@ public class Bullet : MonoBehaviour
         rigidbody = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
+    private void Start()
+    {
+        UpdateBulletSprite();
+    }
+    private void OnEnable()
+    {
+        UpdateBulletSprite();
+    }
+    private void Update()
+    {
+        UpdateBulletSprite();
+
+        conquaredDistance = Vector2.Distance(transform.position, startPosition);
+        if (conquaredDistance >= bulletData.maxDistance) {
+            DisableObject();
+        }
+    }
+
+
 
     public void Initialize(BulletData bulletData, string shootersTag)
     {
@@ -28,19 +47,9 @@ public class Bullet : MonoBehaviour
         rigidbody.velocity = -transform.right * bulletData.speed;
     }
 
-    private void Start()
+    private void UpdateBulletSprite()
     {
-        if (bulletData.sprite != null)
-            spriteRenderer.sprite = bulletData.sprite;
-    }
-
-    private void Update()
-    {
-        conquaredDistance = Vector2.Distance(transform.position, startPosition);
-        if (conquaredDistance >= bulletData.maxDistance)
-        {
-            DisableObject();
-        }
+        spriteRenderer.sprite = bulletData.sprite;
     }
 
     private void DisableObject()

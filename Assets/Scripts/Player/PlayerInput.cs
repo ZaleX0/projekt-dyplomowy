@@ -28,7 +28,7 @@ public class PlayerInput : MonoBehaviour
 
     private void GetShootingInput()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButton(0))
         {
             OnShoot?.Invoke();
         }

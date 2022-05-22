@@ -14,9 +14,11 @@ public class EnemyMovement : MonoBehaviour
 
     private void Update()
     {
-        MoveTowardsObject();
-        GetTurretMovement();
-        Shoot();
+        if (targetObject != null) {
+            MoveTowardsObject();
+            GetTurretMovement();
+            Shoot();
+        }
     }
 
     private void MoveTowardsObject()

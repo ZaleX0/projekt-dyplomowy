@@ -29,7 +29,6 @@ public class WaveSpawner : MonoBehaviour
     private void Update()
     {
         UpdateNumberOfEnemiesLeft();
-        Debug.Log($"numberOfEnemiesLeft: {numberOfEnemiesLeft}");
 
         if (numberOfEnemiesLeft <= 0) {
             currentWaveNumber++;
