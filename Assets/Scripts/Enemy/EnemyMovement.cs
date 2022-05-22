@@ -27,12 +27,12 @@ public class EnemyMovement : MonoBehaviour
         float angle = Vector2.Angle(childrenTank.up, directionToGo) * Mathf.Deg2Rad;
 
         Vector2 result;
+
         if (dot > 0)
             result = new Vector2(angle, 1);
-
         else
             result = new Vector2(-angle, 1);
-
+        
         OnMoveBody?.Invoke(result);
     }
 

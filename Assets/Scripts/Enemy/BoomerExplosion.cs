@@ -27,7 +27,7 @@ public class BoomerExplosion : MonoBehaviour
         }
 
         GameObject explosionEffectInstance = Instantiate(ExplosionEffect, transform.position, Quaternion.identity);
-        explosionEffectInstance.transform.localScale = Vector3.one * 4;
+        explosionEffectInstance.transform.localScale = Vector3.one * explosionRadius / 4;
         Destroy(explosionEffectInstance, 0.5f);
     }
 

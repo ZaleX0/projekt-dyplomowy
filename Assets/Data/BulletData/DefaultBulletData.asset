@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: DefaultBulletData
   m_EditorClassIdentifier: 
   sprite: {fileID: 7365574002475698461, guid: 34f0e316344db7f4aa95951fd450f89a, type: 3}
-  tagToHit: Enemy
   speed: 100
-  damage: 50
+  damage: 100
   maxDistance: 100

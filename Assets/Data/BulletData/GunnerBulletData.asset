@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63e3e79f0fd193743908aabb355f1bb4, type: 3}
   m_Name: GunnerBulletData
   m_EditorClassIdentifier: 
-  sprite: {fileID: -4253028335022237997, guid: 3e140f3ca5764314993bcb248b0c97d9, type: 3}
+  sprite: {fileID: 7568471924918115443, guid: 423b287f1e55c2a43bea3052d9287e64, type: 3}
   speed: 30
   damage: 5
   maxDistance: 100
