@@ -1,12 +1,14 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class WaveSpawner : MonoBehaviour
 {
     public Transform spawnedEnemiesParent;
     public Transform playerObject;
+    public ScoreUI scoreUI;
 
     public GameObject drillerPrefab;
     public GameObject gunnerPrefab;
@@ -16,7 +18,7 @@ public class WaveSpawner : MonoBehaviour
 
     public List<GameObject> enemies;
 
-    private int numberOfEnemiesLeft;
+    public int numberOfEnemiesLeft;
     [SerializeField] float delayBeetweenEnemies = 0.5f;
 
     private void Start()
@@ -86,6 +88,9 @@ public class WaveSpawner : MonoBehaviour
 
         // Set target object to follow
         spawnedEnemy.GetComponent<EnemyMovement>().targetObject = playerObject;
+
+        // Set scoreUI object
+        spawnedEnemy.GetComponent<Score>().scoreUI = this.scoreUI;
 
         return spawnedEnemy;
     }

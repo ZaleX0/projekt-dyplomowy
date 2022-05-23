@@ -221,6 +221,7 @@ GameObject:
   - component: {fileID: 3200843768198306020}
   - component: {fileID: 3200843768198306021}
   - component: {fileID: 1724411620684596398}
+  - component: {fileID: 790888154032670516}
   m_Layer: 0
   m_Name: Driller
   m_TagString: Untagged
@@ -290,6 +291,19 @@ MonoBehaviour:
   OnShoot:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &790888154032670516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3200843768198306022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6044198ae7f440c4cb5540d124825329, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreUI: {fileID: 0}
 --- !u!1 &3705828260078783573
 GameObject:
   m_ObjectHideFlags: 0
@@ -594,6 +608,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 790888154032670516}
+        m_TargetAssemblyTypeName: Score, Assembly-CSharp
+        m_MethodName: AddScore
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
