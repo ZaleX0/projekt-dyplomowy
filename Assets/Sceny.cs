@@ -5,6 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class Sceny : MonoBehaviour
 {
+    private void Awake()
+    {
+        Cursor.visible = true;
+    }
     public void Play()
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene(1);
