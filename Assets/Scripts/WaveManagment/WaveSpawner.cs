@@ -120,6 +120,7 @@ public class WaveSpawner : MonoBehaviour
         {
             return n * Mathf.Log(n) + 3;
         }
-        return (int)Mathf.Ceil(function(waveNumber));
+
+        return (int)Mathf.RoundToInt(function(waveNumber));
     }
 }
