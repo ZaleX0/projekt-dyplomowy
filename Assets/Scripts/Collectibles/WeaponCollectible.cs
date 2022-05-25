@@ -6,10 +6,12 @@ using UnityEngine;
 public class WeaponCollectible : Collectible
 {
     [SerializeField] TurretData turretData;
+    [SerializeField] private AudioSource weaponSound;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         UpdatePlayerTurret(collision);
+        weaponSound.Play();
     }
 
     private void UpdatePlayerTurret(Collider2D collision)
