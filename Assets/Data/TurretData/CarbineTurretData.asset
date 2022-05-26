@@ -15,5 +15,5 @@ MonoBehaviour:
   sprite: {fileID: 5938012242645255967, guid: 34f0e316344db7f4aa95951fd450f89a, type: 3}
   spriteOffset: 2.35
   bulletPrefab: {fileID: 5389851136388089219, guid: 3a8299668f710de438a0560e37692560, type: 3}
-  reloadDelay: 0.1
+  reloadDelay: 0.2
   bulletData: {fileID: 11400000, guid: 769996087dc91f44c9d0ffb4679d7290, type: 2}

@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: -3287367053296241113, guid: 34f0e316344db7f4aa95951fd450f89a, type: 3}
   speed: 100
-  damage: 25
+  damage: 50
   maxDistance: 100

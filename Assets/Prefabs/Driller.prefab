@@ -94,6 +94,7 @@ GameObject:
   - component: {fileID: 2447512869884484096}
   - component: {fileID: 868637862}
   - component: {fileID: 868637864}
+  - component: {fileID: 2943608911594729127}
   m_Layer: 0
   m_Name: Drill
   m_TagString: Untagged
@@ -210,6 +211,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
+--- !u!95 &2943608911594729127
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3118144019101648612}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cd1d5b1ba80d29b42923ab44d9cec757, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &3200843768198306022
 GameObject:
   m_ObjectHideFlags: 0
@@ -571,7 +591,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a84301ed373fcbc4da98d32183cc7195, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 100
+  MaxHealth: 75
   health: 0
   OnDead:
     m_PersistentCalls:
@@ -671,7 +691,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 128f11154c39244419caeecbee69d300, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponDropRate: 10
+  weaponDropRate: 8
   healthDropRate: 20
   healthCollectiblePrefab: {fileID: 7382727149558005084, guid: 9fd17c069e92b1e4e89f7f132ec18963, type: 3}
   weaponCollectiblePrefabs:

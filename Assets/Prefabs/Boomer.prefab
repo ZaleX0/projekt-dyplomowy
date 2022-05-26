@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 8660929336622317325}
   - component: {fileID: 3455910227207990452}
   - component: {fileID: 2338866109912850654}
-  - component: {fileID: 5103026140192881938}
   - component: {fileID: 5776559346123434227}
   m_Layer: 0
   m_Name: Tank
@@ -102,7 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a84301ed373fcbc4da98d32183cc7195, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 100
+  MaxHealth: 150
   health: 0
   OnDead:
     m_PersistentCalls:
@@ -165,18 +164,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   invincibilityDurationSeconds: 0.1
---- !u!114 &5103026140192881938
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 308025762414413116}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09a92d6599e33964e892820504211527, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &5776559346123434227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -189,7 +176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 128f11154c39244419caeecbee69d300, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponDropRate: 10
+  weaponDropRate: 8
   healthDropRate: 20
   healthCollectiblePrefab: {fileID: 7382727149558005084, guid: 9fd17c069e92b1e4e89f7f132ec18963, type: 3}
   weaponCollectiblePrefabs:
@@ -207,7 +194,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4949205043260001274}
   - component: {fileID: 8925021792482758383}
-  - component: {fileID: 2344098517316953570}
   m_Layer: 0
   m_Name: TankBase
   m_TagString: Untagged
@@ -243,25 +229,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementData: {fileID: 11400000, guid: dbf527ae989a6a84386e3842ba009d7a, type: 2}
---- !u!95 &2344098517316953570
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 756883911912831769}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5112313820555001841
 GameObject:
   m_ObjectHideFlags: 0
@@ -272,6 +239,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6367192734216673810}
   - component: {fileID: 126434200061299104}
+  - component: {fileID: 3023315278338276058}
   m_Layer: 0
   m_Name: Base
   m_TagString: Untagged
@@ -338,12 +306,31 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 7.4, y: 6}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &3023315278338276058
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5112313820555001841}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4a9c8ec232ec85c47ba9a4530279f01c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6481954252504836930
 GameObject:
   m_ObjectHideFlags: 0
@@ -501,3 +488,4 @@ MonoBehaviour:
   ExplosionEffect: {fileID: 7315678292373530760, guid: 57b19ce5d87364144ac8b81fefcdc93b, type: 3}
   damagePoints: 50
   explosionRadius: 10
+  animator: {fileID: 3023315278338276058}

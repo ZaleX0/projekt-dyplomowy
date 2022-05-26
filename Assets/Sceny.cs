@@ -5,9 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class Sceny : MonoBehaviour
 {
+    [SerializeField] private AudioSource manuSoundEffect;
+
     private void Awake()
     {
         Cursor.visible = true;
+        manuSoundEffect.Play();
     }
     public void Play()
     {

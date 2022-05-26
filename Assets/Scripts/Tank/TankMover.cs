@@ -5,19 +5,27 @@ using UnityEngine;
 
 public class TankMover : MonoBehaviour
 {
+
     private Vector2 movementVector;
     private Rigidbody2D rigidbody;
-    private Animator animator;
+    private AudioSource audioSource;
 
     public TankMovementData movementData;
 
     private float currentSpeed = 0;
     private float currentForewardDirection = 1;
 
+
     private void Awake()
     {
         rigidbody = GetComponentInParent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
+    }
+
+    private void Start()
+    {
+        if (audioSource != null)
+            audioSource.Play();
     }
 
     public void Move(Vector2 movementVector)
@@ -45,11 +53,12 @@ public class TankMover : MonoBehaviour
         rigidbody.velocity = currentSpeed * currentForewardDirection * Time.fixedDeltaTime * (Vector2)transform.up;
         rigidbody.MoveRotation(transform.rotation * Quaternion.Euler(0, 0, -movementVector.x * movementData.rotationSpeed * Time.fixedDeltaTime));
 
-        Animate();
+        UpdateDrivePitch();
     }
 
-    void Animate()
+    void UpdateDrivePitch()
     {
-        animator.SetFloat("Speed", currentSpeed);
+        if (audioSource != null)
+            audioSource.pitch = 1 + Mathf.Clamp01(currentSpeed / 1000);
     }
 }

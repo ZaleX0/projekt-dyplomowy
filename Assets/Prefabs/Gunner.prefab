@@ -700,7 +700,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 128f11154c39244419caeecbee69d300, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponDropRate: 10
+  weaponDropRate: 8
   healthDropRate: 20
   healthCollectiblePrefab: {fileID: 7382727149558005084, guid: 9fd17c069e92b1e4e89f7f132ec18963, type: 3}
   weaponCollectiblePrefabs:

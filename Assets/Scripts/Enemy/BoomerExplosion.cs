@@ -9,6 +9,8 @@ public class BoomerExplosion : MonoBehaviour
     [SerializeField] int damagePoints;
     [SerializeField] float explosionRadius;
 
+    [SerializeField] Animator animator;
+
     public void Explode()
     {
         Collider2D[] collisions = Physics2D.OverlapCircleAll(transform.position, explosionRadius);
@@ -26,9 +28,8 @@ public class BoomerExplosion : MonoBehaviour
             }
         }
 
-        GameObject explosionEffectInstance = Instantiate(ExplosionEffect, transform.position, Quaternion.identity);
-        explosionEffectInstance.transform.localScale = Vector3.one * explosionRadius / 4;
-        Destroy(explosionEffectInstance, 0.5f);
+
+        ExplosionAnimation();
     }
 
     private void DealDamage(Collider2D collision, int damagePoints)
@@ -36,6 +37,15 @@ public class BoomerExplosion : MonoBehaviour
         var damagable = collision.GetComponent<Damagable>();
         if (damagable != null)
             damagable.Hit(damagePoints);
+    }
+
+    void ExplosionAnimation()
+    {
+        animator?.SetTrigger("Death");
+
+        GameObject explosionEffectInstance = Instantiate(ExplosionEffect, transform.position, Quaternion.identity);
+        explosionEffectInstance.transform.localScale = Vector3.one * explosionRadius / 4;
+        Destroy(explosionEffectInstance, 1f);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
