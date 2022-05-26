@@ -12,16 +12,19 @@ public class PlayerAudio : MonoBehaviour
 
     public void PlayHitSound()
     {
-        audioSource?.PlayOneShot(hitSound);
+        if (audioSource.isActiveAndEnabled)
+            audioSource?.PlayOneShot(hitSound);
     }
 
     public void PlayHealSound()
     {
-        audioSource?.PlayOneShot(healSound);
+        if (audioSource.isActiveAndEnabled)
+            audioSource?.PlayOneShot(healSound);
     }
 
     public void PlayDeathSound()
     {
-        audioSource?.PlayOneShot(deathSound);
+        if (audioSource.isActiveAndEnabled)
+            audioSource?.PlayOneShot(deathSound);
     }
 }

@@ -5462,18 +5462,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5362822773496964190, guid: 9bb667cfb36ad4240895637ee74181f0, type: 3}
-      propertyPath: hitSound
-      value: 
-      objectReference: {fileID: 8300000, guid: b99da9a57308d4ba1bee1cf1d9038376, type: 3}
     - target: {fileID: 6751692713100223363, guid: 9bb667cfb36ad4240895637ee74181f0, type: 3}
       propertyPath: m_Name
       value: Tank
       objectReference: {fileID: 0}
     - target: {fileID: 8755513730558707297, guid: 9bb667cfb36ad4240895637ee74181f0, type: 3}
+      propertyPath: OnDead.m_PersistentCalls.m_Calls.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8755513730558707297, guid: 9bb667cfb36ad4240895637ee74181f0, type: 3}
+      propertyPath: OnDead.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8755513730558707297, guid: 9bb667cfb36ad4240895637ee74181f0, type: 3}
       propertyPath: OnDead.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 2042576447}
+    - target: {fileID: 8755513730558707297, guid: 9bb667cfb36ad4240895637ee74181f0, type: 3}
+      propertyPath: OnDead.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
+      value: PlayerAudio, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8755513730558707297, guid: 9bb667cfb36ad4240895637ee74181f0, type: 3}
+      propertyPath: OnDead.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9bb667cfb36ad4240895637ee74181f0, type: 3}
 --- !u!1 &1029906951
