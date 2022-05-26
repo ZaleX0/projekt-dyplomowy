@@ -11,7 +11,7 @@ public class WeaponCollectible : Collectible
     private void OnTriggerEnter2D(Collider2D collision)
     {
         UpdatePlayerTurret(collision);
-        weaponSound.Play();
+        
     }
 
     private void UpdatePlayerTurret(Collider2D collision)
@@ -19,7 +19,15 @@ public class WeaponCollectible : Collectible
         if (collision.tag == "Player") {
             var turret = collision.GetComponentInChildren<Turret>();
             turret.UpdateTurretData(turretData);
-            Destroy(gameObject);
+            weaponSound.Play();
+            DisableComponents();
+            Destroy(gameObject, 1f);
         }
+    }
+
+    void DisableComponents()
+    {
+        GetComponent<CircleCollider2D>().enabled = false;
+        GetComponent<SpriteRenderer>().enabled = false;
     }
 }

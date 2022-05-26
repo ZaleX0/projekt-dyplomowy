@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: TrollBulletData
   m_EditorClassIdentifier: 
   sprite: {fileID: -4245738604243887485, guid: 34f0e316344db7f4aa95951fd450f89a, type: 3}
-  speed: 20
-  damage: 100
+  speed: 30
+  damage: 150
   maxDistance: 100

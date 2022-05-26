@@ -19,11 +19,14 @@ public class Turret : MonoBehaviour
     private ObjectPool bulletPool;
     [SerializeField] int bulletPoolCount = 10;
 
+    private AudioSource audioSource;
+
     private void Awake()
     {
         tankColliders = GetComponentsInParent<Collider2D>();
         bulletPool = GetComponent<ObjectPool>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void Start()
@@ -62,7 +65,15 @@ public class Turret : MonoBehaviour
                     Physics2D.IgnoreCollision(bullet.GetComponent<Collider2D>(), collider);
                 }
             }
+
+            PlayShootSound();
         }
+    }
+
+    private void PlayShootSound()
+    {
+        if (audioSource != null)
+            audioSource.Play();
     }
 
     public void UpdateTurretData(TurretData turretData)
